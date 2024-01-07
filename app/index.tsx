@@ -9,7 +9,9 @@ import {
   Welcome,
 } from "../components";
 
-export default function Layout() {
+export default function Home() {
+  const router = useRouter();
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
       <Stack
@@ -24,16 +26,14 @@ export default function Layout() {
           ),
           headerTitle: "",
         }}
-        children={
-          <ScrollView showsVerticalScrollIndicator={false}>
-            <View style={{ flex: 1, padding: SIZES.medium }}>
-              <Welcome />
-              <Popularjobs />
-              <Nearbyjobs />
-            </View>
-          </ScrollView>
-        }
       />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={{ flex: 1, padding: SIZES.medium }}>
+          <Welcome />
+          <Popularjobs />
+          <Nearbyjobs />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
